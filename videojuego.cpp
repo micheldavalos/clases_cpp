@@ -18,12 +18,19 @@ void Videojuego::agregarPersonaje(const Personaje &p)
 
 void Videojuego::mostrar()
 {
+    cout << left;
+    cout << setw(10) << "Nombre";
+    cout << setw(10) << "Tipo";
+    cout << setw(8) << "Fuerza";
+    cout << setw(6) << "Salud";
+    cout << endl;
     for (size_t i = 0; i < cont; i++) {
         Personaje &p = arreglo[i];
-        cout << "Nombre: " << p.getNombre() << endl;
-        cout << "Tipo: " << p.getTipo() << endl;
-        cout << "Fuerza: " << p.getFuerza() << endl;
-        cout << "Salud: " << p.getSalud() << endl;
-        cout << endl;
+        cout << p;
+        // cout << "Nombre: " << p.getNombre() << endl;
+        // cout << "Tipo: " << p.getTipo() << endl;
+        // cout << "Fuerza: " << p.getFuerza() << endl;
+        // cout << "Salud: " << p.getSalud() << endl;
+        // cout << endl;
     }
 }

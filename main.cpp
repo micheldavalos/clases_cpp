@@ -16,11 +16,17 @@ int main() {
 
     Videojuego vj;
     
-    vj.agregarPersonaje(p02);
-    vj.agregarPersonaje(p03);
+    // vj.agregarPersonaje(p02);
+    // vj.agregarPersonaje(p03);
+    vj << p02 << p03;
+
+
+    // cout << p02;
+    Personaje p04;
+    cin >> p04;
+    vj << p04;
 
     vj.mostrar();
-
 
     
     // cout << p03.getNombre() << endl;
