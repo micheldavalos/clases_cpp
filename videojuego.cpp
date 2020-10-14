@@ -1,4 +1,5 @@
 #include "videojuego.h"
+#include <fstream>
 
 Videojuego::Videojuego()
 {
@@ -33,4 +34,71 @@ void Videojuego::mostrar()
         // cout << "Salud: " << p.getSalud() << endl;
         // cout << endl;
     }
+}
+
+void Videojuego::respaldar_tabla()
+{
+    ofstream archivo("personajes_tabla.txt");
+    if (archivo.is_open()) {
+        archivo << left;
+        archivo << setw(10) << "Nombre";
+        archivo << setw(10) << "Tipo";
+        archivo << setw(8) << "Fuerza";
+        archivo << setw(6) << "Salud";
+        archivo << endl;
+        for (size_t i = 0; i < cont; i++) {
+            Personaje &p = arreglo[i];
+            archivo << p;
+        }
+    }
+    archivo.close();
+}
+void Videojuego::respaldar()
+{
+    ofstream archivo("personajes.txt");
+    if (archivo.is_open()) {
+        for (size_t i = 0; i < cont; i++) {
+            Personaje &p = arreglo[i];
+            archivo << p.getNombre() << endl;
+            archivo << p.getTipo() << endl;
+            archivo << p.getFuerza() << endl;
+            archivo << p.getSalud() << endl;
+        }
+    }
+    archivo.close();
+}
+
+void Videojuego::recuperar()
+{
+    ifstream archivo("personajes.txt");
+    if (archivo.is_open()) {
+        string temp;
+        float fuerza;
+        int salud;
+        Personaje p;
+
+        while (true)
+        {
+            getline(archivo, temp); // nombre
+            if (archivo.eof()) {
+                break;
+            }
+            p.setNombre(temp);
+
+            getline(archivo, temp); // tipo
+            p.setTipo(temp);
+
+            getline(archivo, temp); // fuerza
+            fuerza = stof(temp);  // string-to-float
+            p.setFuerza(fuerza);
+
+            getline(archivo, temp);
+            salud = stoi(temp); // // string-to-int
+            p.setSalud(salud);
+
+            agregarPersonaje(p);            
+        }
+        
+    }
+    archivo.close();
 }

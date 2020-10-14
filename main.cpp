@@ -4,29 +4,35 @@
 using namespace std;
 
 int main() {
-    Personaje p02 = Personaje(  "michel", 
-                                "zombie", 
-                                80.0, 
-                                70);
-    Personaje p03; // = Personaje();
-    p03.setNombre("davalos");
-    p03.setTipo("troll");
-    p03.setFuerza(60.2);
-    p03.setSalud(20);
+    Videojuego v;
+    v.recuperar();
+    v.recuperar();
+    v.mostrar();
+    // Personaje p02 = Personaje(  "michel", 
+    //                             "zombie", 
+    //                             80.0, 
+    //                             70);
+    // Personaje p03; // = Personaje();
+    // p03.setNombre("davalos");
+    // p03.setTipo("troll");
+    // p03.setFuerza(60.2);
+    // p03.setSalud(20);
 
-    Videojuego vj;
+    // Videojuego vj;
     
     // vj.agregarPersonaje(p02);
     // vj.agregarPersonaje(p03);
-    vj << p02 << p03;
+    // vj << p02 << p03;
 
 
     // cout << p02;
-    Personaje p04;
-    cin >> p04;
-    vj << p04;
+    // Personaje p04;
+    // cin >> p04;
+    // vj << p04;
 
-    vj.mostrar();
+    // vj.mostrar();
+    // vj.respaldar_tabla();
+    // vj.respaldar(); // linea por linea
 
     
     // cout << p03.getNombre() << endl;

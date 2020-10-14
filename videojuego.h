@@ -11,6 +11,9 @@ public:
     Videojuego();
     void agregarPersonaje(const Personaje &p);
     void mostrar();
+    void respaldar_tabla();
+    void respaldar();
+    void recuperar();
 
     friend Videojuego& operator<<(Videojuego &v, const Personaje &p)
     {
