@@ -26,6 +26,47 @@ public:
     void setSalud(int v);
     int getSalud();
 
+    Personaje& operator+(size_t salud)
+    {
+        this->salud += salud;
+
+        return *this;
+    }
+
+    Personaje& operator-(size_t salud)
+    {
+        Personaje::salud -= salud;
+
+        return *this;
+    }
+
+    Personaje& operator++ ()
+    {
+        this->fuerza++;
+
+        return *this;
+    }
+
+    Personaje& operator++(int)
+    {
+        this->fuerza++;
+
+        return *this;
+    }
+
+    Personaje& operator--()
+    {
+         this->fuerza--;
+
+        return *this;
+    }
+    Personaje& operator--( int )
+    {
+         this->fuerza--;
+
+        return *this;
+    }
+
     friend ostream& operator<<(ostream &out, const Personaje &p)
     {
         out << left ;

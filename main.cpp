@@ -3,15 +3,28 @@
 
 using namespace std;
 
+// ToDo: 
+/*      + Hacer que luchen los personajes 
+          cada personaje tiene golpes/defenza como comportamiento
+        + Usar operadores como ->, *, / para hacer ataques
+        + Generar los ataques la pelea entre los personajes de manera aleatoria
+          y con un timer y un hilo, darle prioridad de salir a luchar
+        + Usar herencia para crear tipos de personajes para que hereden de la clase
+          Personaje, tenga métodos abstractos como cuando se recibe una tipo de golpe
+          y así rebajarle un cierto tipo de valor a la fuerza y la salud.
+*/
+
 int main() {
-    Videojuego v;
-    v.recuperar();
-    v.recuperar();
-    v.mostrar();
-    // Personaje p02 = Personaje(  "michel", 
-    //                             "zombie", 
-    //                             80.0, 
-    //                             70);
+    // Videojuego v;
+    // v.recuperar();
+    // v.recuperar();
+    // v.mostrar();
+    Personaje p02 = Personaje(  "michel", 
+                                "zombie", 
+                                80.0, 
+                                70);
+    cout << --p02;
+    
     // Personaje p03; // = Personaje();
     // p03.setNombre("davalos");
     // p03.setTipo("troll");
