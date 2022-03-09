@@ -15,12 +15,16 @@ int main() {
     p03.setSalud(20);
 
     Videojuego vj;
+    vj.nombre = "Michel";
     
     vj.agregarPersonaje(p02);
     vj.agregarPersonaje(p03);
 
     vj.mostrar();
 
+    Videojuego vj02(vj);
+    vj02.nombre = "Davalos";
+    vj02 = vj;
 
     
     // cout << p03.getNombre() << endl;

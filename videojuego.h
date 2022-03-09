@@ -9,8 +9,13 @@ class Videojuego
     size_t cont;
 public:
     Videojuego();
+    ~Videojuego() = default;
+    Videojuego(Videojuego const& vj) = default;
+    Videojuego& operator=(const Videojuego& vj) = default;
     void agregarPersonaje(const Personaje &p);
     void mostrar();
+    
+    string nombre;
 };
 
 #endif
